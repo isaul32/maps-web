@@ -15,8 +15,8 @@ const INITIAL_VIEW_STATE = {
 
 const data = [
   {
-    sourcePosition: [23.78712, 61.49911],
-    targetPosition: [23.78, 61.49],
+    sourcePosition: [23.78712, 61.52],
+    targetPosition: [23.78, 61.519],
   },
 ];
 
