@@ -6,6 +6,7 @@ import { store } from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
