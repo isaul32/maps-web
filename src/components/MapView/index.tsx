@@ -6,8 +6,8 @@ import { LineLayer } from "@deck.gl/layers";
 import { MapContext } from "react-map-gl/dist/esm/components/map";
 
 const INITIAL_VIEW_STATE = {
-  longitude: -122.41669,
-  latitude: 37.7853,
+  longitude: 23.78712,
+  latitude: 61.49911,
   zoom: 13,
   pitch: 0,
   bearing: 0,
@@ -15,8 +15,8 @@ const INITIAL_VIEW_STATE = {
 
 const data = [
   {
-    sourcePosition: [-122.41669, 37.7853],
-    targetPosition: [-122.41669, 37.781],
+    sourcePosition: [23.78712, 61.49911],
+    targetPosition: [23.78, 61.49],
   },
 ];
 
@@ -30,10 +30,7 @@ const MapView: FC = () => {
       layers={layers}
       ContextProvider={MapContext.Provider}
     >
-      <StaticMap
-        mapLib={maplibregl}
-        mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-      />
+      <StaticMap mapLib={maplibregl} mapStyle="style.json" />
     </DeckGL>
   );
 };
