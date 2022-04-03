@@ -20,13 +20,21 @@ const data = [
   },
 ];
 
-const MapView: FC = () => {
+const Map: FC = () => {
+  const controller = {
+    // scrollZoom: {
+    //   smooth: false,
+    // },
+    touchRotate: true,
+    keyboard: false,
+    inertia: true,
+  };
   const layers = [new LineLayer({ id: "line-layer", data })];
 
   return (
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
-      controller={true}
+      controller={controller}
       layers={layers}
       ContextProvider={MapContext.Provider}
     >
@@ -35,4 +43,4 @@ const MapView: FC = () => {
   );
 };
 
-export default MapView;
+export default Map;

@@ -3,7 +3,7 @@
 import "./App.css";
 
 import "maplibre-gl/dist/maplibre-gl.css";
-import MapView from "./components/MapView";
+import Map from "./components/Map";
 
 function App() {
   return (
@@ -53,7 +53,7 @@ function App() {
           </a>
         </span>
       </header> */}
-      <MapView />
+      <Map />
     </div>
   );
 }
