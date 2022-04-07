@@ -4,6 +4,7 @@ import maplibregl from "maplibre-gl";
 import DeckGL from "@deck.gl/react";
 import { LineLayer } from "@deck.gl/layers";
 import { MapContext } from "react-map-gl/dist/esm/components/map";
+import { Layer } from "deck.gl";
 
 const INITIAL_VIEW_STATE = {
   longitude: 23.78712,
@@ -29,7 +30,9 @@ const Map: FC = () => {
     keyboard: false,
     inertia: true,
   };
-  const layers = [new LineLayer({ id: "line-layer", data })];
+  const layers: Layer<unknown>[] = [
+    // new LineLayer({ id: "line-layer", data })
+  ];
 
   return (
     <DeckGL
