@@ -1,60 +1,50 @@
-// import logo from "./logo.svg";
-// import { Counter } from "./features/counter/Counter";
-import "./App.css";
-
+import {
+  Map,
+  useControl,
+  FullscreenControl,
+  GeolocateControl,
+  ScaleControl,
+  NavigationControl,
+} from "react-map-gl/maplibre";
+import { MapboxOverlay, MapboxOverlayProps } from "@deck.gl/mapbox";
+import { type Layer } from "@deck.gl/core";
 import "maplibre-gl/dist/maplibre-gl.css";
-import Map from "./components/Map";
+
+function DeckGLOverlay(props: MapboxOverlayProps) {
+  const overlay = useControl<MapboxOverlay>(() => new MapboxOverlay(props));
+  overlay.setProps(props);
+  return null;
+}
 
 function App() {
+  const layers: Layer[] = [];
+
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header> */}
-      <Map />
-    </div>
+    <Map
+      initialViewState={{
+        longitude: 23.76712,
+        latitude: 61.49911,
+        zoom: 12,
+      }}
+      antialias={true}
+      hash={true}
+      style={{ position: "absolute" }}
+      mapStyle="style.json"
+    >
+      <DeckGLOverlay layers={layers} interleaved />
+      <FullscreenControl />
+      <ScaleControl />
+      <NavigationControl position="bottom-right" showCompass={false} />
+      <GeolocateControl
+        position="bottom-right"
+        positionOptions={{
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0,
+        }}
+      />
+      <NavigationControl position="bottom-right" showZoom={false} />
+    </Map>
   );
 }
 
