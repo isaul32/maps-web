@@ -43,7 +43,11 @@ function App() {
           maximumAge: 0,
         }}
       />
-      <NavigationControl position="bottom-right" showZoom={false} />
+      <NavigationControl
+        position="bottom-right"
+        showZoom={false}
+        visualizePitch={true}
+      />
     </Map>
   );
 }
