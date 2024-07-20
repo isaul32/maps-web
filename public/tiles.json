@@ -1,5 +1,5 @@
 {
-  "tiles": ["https://dqq4k496a0y1f.cloudfront.net/{z}/{x}/{y}.pbf"],
+  "tiles": ["https://h.sau.li/tiles/{z}/{x}/{y}.pbf"],
   "name": "OpenMapTiles",
   "format": "pbf",
   "basename": "tiles.mbtiles",
